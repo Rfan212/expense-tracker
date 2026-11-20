@@ -1,0 +1,21 @@
+p,
+h5 {
+  margin: 0;
+}
+
+main .container {
+  margin-top: 80px;
+}
+
+.main-card {
+  height: 320px;
+  overflow-y: auto;
+}
+
+footer {
+  margin-top: 60px;
+}
+
+#contact a {
+  color: inherit;
+}

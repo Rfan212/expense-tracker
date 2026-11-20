@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Expense Tracker</title>
+
+    <!-- Link Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-B/GM4XqrwHnWXNOWMbloTmrYXZg10cakYGmpfsR/bbzQ6JAJI4ihuyADKLnBgrCe" crossorigin="anonymous" />
+    <script type="module" src="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-1a/pXj49ZQ1aHEmrJ+gMw1otqoVsYwlEnlD8mIfY2TV03r20Y0CN7uqx1tQogjPL" crossorigin="anonymous"></script>
+
+    <!-- Link Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Link Javascript -->
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar sm:navbar-expand bg-success" data-bs-theme="dark">
+      <div class="container-fluid">
+        <a class="navbar-brand fs-3 fw-bold" href="#home">Expense Tracker</a>
+        <button class="btn-icon navbar-toggler" type="button" data-bs-toggle="drawer" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon" aria-hidden="true"></span>
+        </button>
+        <dialog class="drawer drawer-end" tabindex="-1" id="navbarNav" aria-labelledby="navbarNavLabel">
+          <div class="drawer-header">
+            <h5 class="drawer-title" id="navbarNavLabel">Menu</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="drawer" aria-label="Close"></button>
+          </div>
+          <div class="drawer-body">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#home">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#contact">About Us</a>
+              </li>
+            </ul>
+          </div>
+        </dialog>
+      </div>
+    </nav>
+
+    <!-- Form -->
+    <main>
+      <div class="container">
+        <div class="row g-5">
+          <div class="md:col-5">
+            <form id="projectForm">
+              <div class="card">
+                <h4 class="card-header bg-success fg-contrast-inverse">Tambah Pengeluaran</h4>
+                <div class="card-body">
+                  <div class="form-field">
+                    <label for="fieldText" class="form-label">Nama Pengeluaran</label>
+                    <input type="text" class="form-control" id="projectName" placeholder="Contoh: Makan Siang" />
+                  </div>
+                  <div class="form-field">
+                    <label for="fieldText" class="form-label">Nominal / Harga (Rp)</label>
+                    <input type="text" class="form-control" id="projectPrice" placeholder="Contoh: 25000" />
+                  </div>
+                  <button class="btn btn-solid theme-success w-100 fw-bold" type="submit" id="button">Simpan Data</button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="md:col-7">
+            <div class="card main-card mb-5">
+              <div class="card-body gap-2">
+                <ul class="list-group">
+                  <li class="list-group-item border rounded p-2 d-flex justify-content-between align-items-center">
+                    <h4>Daftar Pengeluaran</h4>
+                    <div class="p-3 bg-danger fg-contrast-danger rounded fw-bold">
+                      <p id="totalPrice"></p>
+                    </div>
+                  </li>
+                </ul>
+                <ul class="list-group gap-2" id="projectList"></ul>
+              </div>
+            </div>
+            <div class="d-flex justify-content-end">
+              <button type="button" class="btn-solid theme-danger btn-lg" id="deleteButton">DELETE</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black fg-white">
+      <div class="container text-center">
+        <p class="fw-bold pt-5">Connect with Us</p>
+        <div class="d-flex gap-5 justify-content-center mb-4" id="contact">
+          <a href="#"><i data-feather="linkedin"></i></a>
+          <a href="#"><i data-feather="facebook"></i></a>
+          <a href="#"><i data-feather="instagram"></i></a>
+          <a href=""><i data-feather="github"></i></a>
+        </div>
+        <p class="mb-0 pb-2">&copy; Expense Tracker. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- Feather Icons -->
+    <script>
+      feather.replace();
+    </script>
+  </body>
+</html>
